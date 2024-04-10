@@ -8,7 +8,6 @@ namespace TicTacToe
 
         static void Main(string[] args)
         {
-
             char[,] grid = new char[GRID_SIZE, GRID_SIZE];
 
             InitializeGrid(grid);
@@ -24,7 +23,7 @@ namespace TicTacToe
                 if (IsGameOver(grid))
                     break;
 
-                Console.WriteLine("AI turn");
+                Console.WriteLine("AI turn.");
 
                 AIMove(grid);
                 DisplayGrid(grid);
@@ -33,11 +32,11 @@ namespace TicTacToe
             char winner = CheckWinner(grid);
             if (winner != ' ')
             {
-                Console.WriteLine("Well Done, " + winner + " is the winner!");
+                Console.WriteLine("Well done, " + winner + " is the winner!");
             }
             else
             {
-                Console.WriteLine("Tie!");
+                Console.WriteLine("Draw!");
             }
         }
 
@@ -89,9 +88,9 @@ namespace TicTacToe
             bool validMove = false;
             while (!validMove)
             {
-                Console.Write("Choose your row (1, 2 or 3): ");
+                Console.Write("Choose a row between (1, 2 or 3): ");
                 int row = int.Parse(Console.ReadLine()) - 1;
-                Console.Write("Choose your column (1, 2 or 3): ");
+                Console.Write("Choose a column between (1, 2 or 3): ");
                 int column = int.Parse(Console.ReadLine()) - 1;
 
                 if (IsValidMove(grid, row, column))
@@ -101,7 +100,7 @@ namespace TicTacToe
                 }
                 else
                 {
-                    Console.WriteLine("Invalid spot. Try again.");
+                    Console.WriteLine("Invalid spot. Please try again.");
                 }
             }
         }
@@ -131,7 +130,7 @@ namespace TicTacToe
 
         static char CheckWinner(char[,] grid)
         {
-            // Verify if there is a winner on rows, columns or diagonals
+            // Checking if there is a winner on rows, columns or diagonals
             for (int i = 0; i < GRID_SIZE; i++)
             {
                 if (grid[i, 0] != ' ' && grid[i, 0] == grid[i, 1] && grid[i, 1] == grid[i, 2])
@@ -145,7 +144,7 @@ namespace TicTacToe
             if (grid[0, 2] != ' ' && grid[0, 2] == grid[1, 1] && grid[1, 1] == grid[2, 0])
                 return grid[0, 2];
 
-            return ' '; // No winner yet
+            return ' '; // No winner
         }
 
         static bool IsBoardFull(char[,] grid)
@@ -162,6 +161,8 @@ namespace TicTacToe
         }
     }
 }
+
+
 
 
 
