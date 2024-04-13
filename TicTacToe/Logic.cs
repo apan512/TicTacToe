@@ -2,6 +2,7 @@
 {
     public class Logic
     {
+        const char EMPTY_CHAR = ' ';
         public static bool IsValidMove(char[,] grid, int row, int column)
         {
             // Checking for invalid move
@@ -11,7 +12,7 @@
         public static bool IsGameOver(char[,] grid)
         {
             // Checking if the game is over
-            return CheckWinner(grid) != ' ' || IsBoardFull(grid);
+            return CheckWinner(grid) != EMPTY_CHAR || IsBoardFull(grid);
         }
 
         public static char CheckWinner(char[,] grid)

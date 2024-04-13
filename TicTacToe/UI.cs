@@ -4,6 +4,7 @@ namespace TicTacToe
 {
     public class UI
     {
+        const char X_PLAYER_VALUE = 'X';
         public static void DisplayGrid(char[,] grid)
         {
             // Displaying the grid
@@ -37,6 +38,11 @@ namespace TicTacToe
             }
         }
 
+        public static void DisplayMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
+
         public static void UserMove(char[,] grid)
         {
             // Allow the user to make a move
@@ -50,7 +56,7 @@ namespace TicTacToe
 
                 if (Logic.IsValidMove(grid, row, column))
                 {
-                    grid[row, column] = 'X';
+                    grid[row, column] = X_PLAYER_VALUE;
                     validMove = true;
                 }
                 else
@@ -87,11 +93,7 @@ namespace TicTacToe
             }
         }
 
-        public static void DisplayInvalidMoveMessage()
-        {
-            // Displaying the invalid input message
-            Console.WriteLine("Invalid spot. Please try again.");
-        }
+       
     }
 }
 

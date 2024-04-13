@@ -5,6 +5,7 @@ namespace TicTacToe
     class Program
     {
         public const int GRID_SIZE = 3;
+        private static readonly Random rand = new Random();
 
         static void Main(string[] args)
         {
@@ -15,14 +16,14 @@ namespace TicTacToe
 
             while (!Logic.IsGameOver(grid))
             {
-                Console.WriteLine("Your turn.");
+                UI.DisplayMessage("Your turn.");
                 UI.UserMove(grid);
                 UI.DisplayGrid(grid);
 
                 if (Logic.IsGameOver(grid))
                     break;
 
-                Console.WriteLine("AI turn.");
+                UI.DisplayMessage("AI turn.");
                 UI.AIMove(grid);
                 UI.DisplayGrid(grid);
             }
@@ -32,3 +33,4 @@ namespace TicTacToe
         }
     }
 }
+
