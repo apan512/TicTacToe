@@ -4,12 +4,9 @@ namespace TicTacToe
 {
     class Program
     {
-        public const int GRID_SIZE = 3;
-        private static readonly Random rand = new Random();
-
         static void Main(string[] args)
         {
-            char[,] grid = new char[GRID_SIZE, GRID_SIZE];
+            char[,] grid = new char[Constants.GRID_SIZE, Constants.GRID_SIZE];
 
             Logic.InitializeGrid(grid);
             UI.DisplayGrid(grid);
@@ -33,4 +30,5 @@ namespace TicTacToe
         }
     }
 }
+
 
