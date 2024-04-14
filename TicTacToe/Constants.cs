@@ -8,7 +8,12 @@
 
         public const char EMPTY_CHAR = ' ';
 
-        public static readonly Random rand = new Random();
+        public const string EMPTY_STRING = " ";
 
+        public const string SECOND_EMPTY_STRING = "  ";
+
+        public const string SPECIAL_STRING_CHAR_GRID = "_";
+
+        public const char AI_PLAYER_VALUE = '0';
     }
 }

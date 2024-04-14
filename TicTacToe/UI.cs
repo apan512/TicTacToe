@@ -4,33 +4,33 @@ namespace TicTacToe
 {
     public class UI
     {
-        
+        public static readonly Random rand = new Random();
         public static void DisplayGrid(char[,] grid)
         {
-            Console.Write("  ");
+            Console.Write(Constants.SECOND_EMPTY_STRING);
             for (int j = 0; j < Constants.GRID_SIZE; j++)
             {
-                Console.Write((j + 1) + " ");
+                Console.Write((j + 1) + Constants.EMPTY_STRING);
             }
             Console.WriteLine();
 
             for (int i = 0; i < Constants.GRID_SIZE; i++)
             {
-                Console.Write((i + 1) + " ");
+                Console.Write((i + 1) + Constants.EMPTY_STRING);
                 for (int j = 0; j < Constants.GRID_SIZE; j++)
                 {
-                    if (grid[i, j] != ' ')
+                    if (grid[i, j] != Constants.EMPTY_CHAR)
                     {
                         Console.Write(grid[i, j]);
                     }
                     else
                     {
-                        Console.Write("_");
+                        Console.Write(Constants.SPECIAL_STRING_CHAR_GRID);
                     }
 
                     if (j < Constants.GRID_SIZE - 1)
                     {
-                        Console.Write(" ");
+                        Console.Write(Constants.EMPTY_STRING);
                     }
                 }
                 Console.WriteLine();
@@ -71,11 +71,11 @@ namespace TicTacToe
                 int row, column;
                 do
                 {
-                    row = Constants.rand.Next(0, Constants.GRID_SIZE);
-                    column = Constants.rand.Next(0, Constants.GRID_SIZE);
+                    row = UI.rand.Next(0, Constants.GRID_SIZE);
+                    column = UI.rand.Next(0, Constants.GRID_SIZE);
                 } while (!Logic.IsValidMove(grid, row, column));
 
-                grid[row, column] = 'O';
+                grid[row, column] = Constants.AI_PLAYER_VALUE;
             }
 
             public static void DisplayGameOverMessage(char winner)
