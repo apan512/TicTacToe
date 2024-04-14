@@ -68,12 +68,11 @@ namespace TicTacToe
             public static void AIMove(char[,] grid)
             {
                 // AI move
-                Random rand = new Random();
                 int row, column;
                 do
                 {
-                    row = rand.Next(0, Constants.GRID_SIZE);
-                    column = rand.Next(0, Constants.GRID_SIZE);
+                    row = Constants.rand.Next(0, Constants.GRID_SIZE);
+                    column = Constants.rand.Next(0, Constants.GRID_SIZE);
                 } while (!Logic.IsValidMove(grid, row, column));
 
                 grid[row, column] = 'O';

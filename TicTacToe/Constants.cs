@@ -7,5 +7,8 @@
         public const char X_PLAYER_VALUE = 'X';
 
         public const char EMPTY_CHAR = ' ';
+
+        public static readonly Random rand = new Random();
+
     }
 }
