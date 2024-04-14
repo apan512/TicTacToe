@@ -7,7 +7,7 @@
         {
             // Checking for invalid move
             return row >= 0 && row < Constants.GRID_SIZE && column >= 0 && column < Constants.GRID_SIZE && grid[row, column] == Constants.EMPTY_CHAR;
-        }
+        } 
 
         public static bool IsGameOver(char[,] grid)
         {
