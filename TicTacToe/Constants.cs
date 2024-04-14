@@ -9,4 +9,3 @@
         public const char EMPTY_CHAR = ' ';
     }
 }
-
