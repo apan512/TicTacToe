@@ -71,7 +71,7 @@ namespace TicTacToe
                 int row, column;
                 do
                 {
-                    row = UI.rand.Next(0, Constants.GRID_SIZE);
+                    row = rand.Next(0, Constants.GRID_SIZE);
                     column = UI.rand.Next(0, Constants.GRID_SIZE);
                 } while (!Logic.IsValidMove(grid, row, column));
 

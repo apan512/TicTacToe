@@ -2,7 +2,7 @@
 {
     public class Logic
     {
-        
+       
         public static bool IsValidMove(char[,] grid, int row, int column)
         {
             // Checking for invalid move
